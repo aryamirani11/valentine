@@ -1,202 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Preethi 💕</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      background: linear-gradient(180deg, #1a0a0f 0%, #2d1b2e 50%, #1a0a0f 100%);
-      font-family: 'Quicksand', sans-serif;
-      color: #ffe4ec;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      position: relative;
-    }
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .heart {
-      position: absolute;
-      font-size: 1.2rem;
-      opacity: 0.7;
-      animation: fall linear infinite;
-    }
-    @keyframes fall {
-      0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.7; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
-    }
-    .card {
-      background: linear-gradient(145deg, rgba(255,182,193,0.15) 0%, rgba(255,105,180,0.1) 100%);
-      border: 2px solid rgba(255, 182, 193, 0.4);
-      border-radius: 24px;
-      padding: 2.5rem 2rem;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(255,105,180,0.1);
-      position: relative;
-      z-index: 1;
-      animation: cardIn 1s ease-out;
-    }
-    @keyframes cardIn {
-      from { opacity: 0; transform: scale(0.9) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.2rem;
-      color: #ffb6c1;
-      margin-bottom: 0.5rem;
-    }
-    .for {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-    .message {
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 1.8rem;
-      opacity: 0.95;
-    }
-    .question {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.6rem;
-      color: #ffc0cb;
-      margin-bottom: 1.2rem;
-    }
-    .buttons {
-      display: flex;
-      gap: 0.8rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.7rem 1.4rem;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn:hover { transform: scale(1.08); }
-    .btn-yes {
-      background: linear-gradient(135deg, #ff9ebb, #ff6b9d);
-      color: #1a0a0f;
-      box-shadow: 0 4px 20px rgba(255, 107, 157, 0.4);
-    }
-    .btn-hell {
-      background: linear-gradient(135deg, #ff6b9d, #c71585);
-      color: #ffe4ec;
-      box-shadow: 0 4px 20px rgba(199, 21, 133, 0.5);
-    }
-    .reply {
-      margin-top: 1.2rem;
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
-      color: #ffb6c1;
-      min-height: 2rem;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-    .reply.show { opacity: 1; }
-    .extra-hearts {
-      position: fixed;
-      pointer-events: none;
-      z-index: 10;
-    }
-    .extra-hearts span {
-      position: absolute;
-      font-size: 1.5rem;
-      animation: pop 1s ease-out forwards;
-    }
-    @keyframes pop {
-      0% { transform: scale(0); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 0; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec; /* Light pink background */
+            margin: 0;
+            overflow: hidden; /* Prevents scrollbars when button gets huge */
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #yesBtn {
+            background-color: #4caf50; /* Green */
+            color: white;
+            font-weight: bold;
+        }
+
+        #noBtn {
+            background-color: #f44336; /* Red */
+            color: white;
+            font-weight: bold;
+        }
+
+        /* The hidden Yay screen */
+        #success {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #success img {
+            width: 300px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        /* Floating hearts background animation (optional flair) */
+        .heart {
+            position: absolute;
+            color: #e91e63;
+            opacity: 0.3;
+            animation: float 6s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.5); }
+            100% { transform: translateY(-10vh) scale(1.5); }
+        }
+    </style>
 </head>
 <body>
-  <div class="hearts" id="hearts"></div>
-  <div class="card">
-    <h1>Happy Valentine's Day</h1>
-    <p class="for">For Preethi 💕</p>
-    <p class="message">
-      You make every day brighter. This little thing is just a small way to say I love you and I'm so glad you're mine.
-    </p>
-    <p class="question">Will you be my Valentine?</p>
-    <div class="buttons">
-      <button class="btn btn-yes" id="btnYes">Yes</button>
-      <button class="btn btn-hell" id="btnHell">Hell yes</button>
+
+    <div id="question-container" class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="acceptLove()">Yes</button>
+            <button id="noBtn" onclick="rejectLove()">No</button>
+        </div>
     </div>
-    <p class="reply" id="reply"></p>
-  </div>
-  <div class="extra-hearts" id="extraHearts"></div>
 
-  <script>
-    (function() {
-      const heartsContainer = document.getElementById('hearts');
-      const symbols = ['♥', '💕', '💗', '💖', '💘'];
-      const total = 25;
+    <div id="success" class="container">
+        <h1>YAY! See you on the 14th! 💘</h1>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2QzN3Z4Z3I5bHlzM2x6ZjZ6bnZ4Z3I5bHlzM2x6ZjZ6bnZ4ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KxtjPgBHlUE0Zqad8p/giphy.gif" alt="Happy Cat">
+    </div>
 
-      for (let i = 0; i < total; i++) {
-        const el = document.createElement('span');
-        el.className = 'heart';
-        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-        el.style.left = Math.random() * 100 + '%';
-        el.style.animationDuration = (8 + Math.random() * 8) + 's';
-        el.style.animationDelay = Math.random() * 5 + 's';
-        heartsContainer.appendChild(el);
-      }
+    <script>
+        let yesFontSize = 1.2; // Initial font size in rem
+        let yesPadding = 15;   // Initial padding
+        let clickCount = 0;
 
-      const replyEl = document.getElementById('reply');
-      const extraHeartsEl = document.getElementById('extraHearts');
+        // Funny messages when they click No
+        const noTexts = [
+            "Are you sure?",
+            "Really sure?",
+            "Think again!",
+            "Last chance!",
+            "Surely not?",
+            "You might regret this!",
+            "Give it another thought!",
+            "Are you absolutely certain?",
+            "This could be a mistake!",
+            "Have a heart!",
+            "Don't be so cold!",
+            "Change of heart?",
+            "Wouldn't you reconsider?",
+            "Is that your final answer?",
+            "You're breaking my heart ;("
+        ];
 
-      function showReply(text) {
-        replyEl.textContent = text;
-        replyEl.classList.add('show');
-      }
+        function rejectLove() {
+            clickCount++;
+            
+            // 1. Make the Yes button bigger
+            yesFontSize += 0.5;
+            yesPadding += 10;
+            
+            const yesBtn = document.getElementById("yesBtn");
+            yesBtn.style.fontSize = `${yesFontSize}rem`;
+            yesBtn.style.padding = `${yesPadding}px ${yesPadding * 2}px`;
 
-      function spawnHearts(x, y, count) {
-        const symbols = ['♥', '💕', '💗', '💖', '💘'];
-        for (let i = 0; i < count; i++) {
-          const s = document.createElement('span');
-          s.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-          s.style.left = (x + (Math.random() - 0.5) * 80) + 'px';
-          s.style.top = y + 'px';
-          s.style.animationDelay = (i * 0.05) + 's';
-          extraHeartsEl.appendChild(s);
-          setTimeout(function() { s.remove(); }, 1100);
+            // 2. Change the text on the No button
+            const noBtn = document.getElementById("noBtn");
+            if (clickCount < noTexts.length) {
+                noBtn.innerText = noTexts[clickCount];
+            } else {
+                noBtn.innerText = "Okay fine...";
+                noBtn.style.display = "none"; // Eventually hide it if they persist
+            }
         }
-      }
 
-      document.getElementById('btnYes').addEventListener('click', function() {
-        showReply('I love you too, Preethi! 💕');
-        spawnHearts(window.innerWidth / 2, window.innerHeight / 2, 15);
-      });
+        function acceptLove() {
+            // Hide Question, Show Success
+            document.getElementById("question-container").style.display = "none";
+            document.getElementById("success").style.display = "flex";
+            
+            // Add some background hearts
+            createHearts();
+        }
 
-      document.getElementById('btnHell').addEventListener('click', function() {
-        showReply('Hell yes! You're the best! 💘');
-        spawnHearts(window.innerWidth / 2, window.innerHeight / 2, 25);
-      });
-    })();
-  </script>
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤";
+                heart.classList.add("heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+                heart.style.fontSize = Math.random() * 20 + 10 + "px";
+                document.body.appendChild(heart);
+            }
+        }
+    </script>
 </body>
 </html>
